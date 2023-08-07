@@ -18,3 +18,15 @@ Chicho challenge
 - Can you add support for two mobile carriers? How would you accomplish that?
 - Create a new integration with an external service like Twilio to send and track an SMS.
 - Create Unit Tests for this integration using a mock web server or similar.
+
+#### NOTAS
+
+- Las pruebas pasan sin problemas cuando son ejecutadas individualmente, tuve unos problemas para ejecutar la suit de pruebas ya que habian algunos conflictos en los mocks, creo que eso se puede manejar. 
+
+aqui dejo de igual manera el comando para cada test
+
+php ./vendor/phpunit/phpunit/phpunit tests/MobileTest.php --filter it_returns_null_when_name_empty
+php ./vendor/phpunit/phpunit/phpunit tests/MobileTest.php --filter it_returns_a_contact_valid_when_name_is_not_empty
+php ./vendor/phpunit/phpunit/phpunit tests/MobileTest.php --filter it_returns_null_when_contact_not_found
+php ./vendor/phpunit/phpunit/phpunit tests/MobileTest.php --filter it_returns_ok_when_send_sms
+php ./vendor/phpunit/phpunit/phpunit tests/MobileTest.php --filter it_returns_error_when_send_sms

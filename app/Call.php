@@ -2,12 +2,24 @@
 
 namespace App;
 
-
 class Call
 {
-	
-	function __construct()
-	{
-		# code...
-	}
+    protected $duration;
+    protected $callStatus;
+
+    public function __construct($duration, $callStatus)
+    {
+        $this->duration = $duration;
+        $this->callStatus = $callStatus;
+    }
+
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    public function getCallStatus()
+    {
+        return $this->callStatus;
+    }
 }
